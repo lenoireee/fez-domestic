@@ -13,13 +13,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // Load shared Fez auth/logging/HTTP layer.
 // function_exists guards inside pd-shared.php mean whichever plugin loads
 // first defines the functions — the second plugin safely skips them.
-require_once plugin_dir_path( __FILE__ ) . 'pd-shared.php';
+// Add this use statement
+use RYSE\GitHubUpdaterDemo\GitHubUpdater;
 
-// In your main plugin file (e.g., my-plugin.php)
+require_once plugin_dir_path( __FILE__ ) . 'pd-shared.php';
 require_once plugin_dir_path( __FILE__ ) . 'github-updater.php';
 
 $updater = new GitHubUpdater(__FILE__);
-$updater->setBranch('wordpress'); // or whatever branch you track
+$updater->setBranch('wordpress');
 $updater->add();
 
 // ---------------------------------------------------------------------------
