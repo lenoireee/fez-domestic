@@ -1,8 +1,11 @@
 <?php
 /**
- * Plugin Name: Premier Dispatch Domestic
+ * Plugin Name: FEZ Dispatch Domestic
  * Description: v3.0 — Nigerian shipping with cached rates and shared Fez auth layer.
- * Version:     3.0.0
+ * Author: Comfort Inyang
+ * Version:     3.1.0
+ * Tested up to:       3.0.0
+ * Update URI:         https://github.com/lenoireee/fez-domestic
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -12,6 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // first defines the functions — the second plugin safely skips them.
 require_once plugin_dir_path( __FILE__ ) . 'pd-shared.php';
 
+// In your main plugin file (e.g., my-plugin.php)
+require_once __DIR__ . '/class-github-updater.php';
+
+$updater = new GitHubUpdater(__FILE__);
+$updater->setBranch('wordpress'); // or whatever branch you track
+$updater->add();
 
 // ---------------------------------------------------------------------------
 // DOMESTIC PRICE CACHE HELPERS
