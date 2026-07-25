@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 require_once plugin_dir_path( __FILE__ ) . 'pd-shared.php';
 
 // In your main plugin file (e.g., my-plugin.php)
-require_once __DIR__ . '/class-github-updater.php';
+require_once plugin_dir_path( __FILE__ ) . 'github-updater.php';
 
 $updater = new GitHubUpdater(__FILE__);
 $updater->setBranch('wordpress'); // or whatever branch you track
