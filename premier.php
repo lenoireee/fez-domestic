@@ -1,11 +1,10 @@
 <?php
 /**
  * Plugin Name: FEZ Dispatch Domestic
- * Description: v3.0 — Nigerian shipping with cached rates and shared Fez auth layer.
+ * Description: Nigerian shipping with cached rates and shared Fez auth layer.
  * Author: Comfort Inyang
- * Version:     3.1.0
- * Tested up to:       3.0.0
- * Update URI:         https://github.com/lenoireee/fez-domestic
+ * Version:     3.2.0
+ * Update URI:  https://github.com/lenoireee/fez-domestic
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
