@@ -3,7 +3,7 @@
  * Plugin Name: FEZ Dispatch Domestic
  * Description: Nigerian shipping with cached rates and shared Fez auth layer.
  * Author: Comfort Inyang
- * Version:     3.2.0
+ * Version:     3.3.0
  * Update URI:  https://github.com/lenoireee/fez-domestic
  */
 
@@ -49,7 +49,8 @@ function pdd_key( $key ) {
 // ---------------------------------------------------------------------------
 function pd_domestic_init_v30() {
     if ( ! class_exists( 'WC_Shipping_Method' ) ) return;
-
+    if ( class_exists( 'WC_Shipping_PD_Domestic' ) ) return;
+    
     class WC_Shipping_PD_Domestic extends WC_Shipping_Method {
 
         public function __construct( $instance_id = 0 ) {
@@ -448,9 +449,10 @@ function pd_domestic_init_v30() {
             update_option( 'pdd_sync_interval_seconds', $hours * HOUR_IN_SECONDS, false );
         }
     }
+    
 }
 
-add_action( 'woocommerce_shipping_init', 'pd_domestic_init_v30' );
+add_action( 'woocommerce_shipping_init', 'pd_domestic_init_v30', 5 );
 
 add_filter( 'woocommerce_shipping_methods', function( $methods ) {
     $methods['pd_domestic'] = 'WC_Shipping_PD_Domestic';
