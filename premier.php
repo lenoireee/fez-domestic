@@ -3,7 +3,7 @@
  * Plugin Name: FEZ Dispatch Domestic
  * Description: Nigerian shipping with cached rates and shared Fez auth layer.
  * Author: Comfort Inyang
- * Version:     3.2.0
+ * Version:     3.3.0
  * Update URI:  https://github.com/lenoireee/fez-domestic
  */
 
